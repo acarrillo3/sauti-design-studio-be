@@ -6,6 +6,10 @@ const projectModel = require('../models/project-models')
 
 const db = require('../database/dbConfig');
 
+router.get('/', (req,res)=>{
+    res.json({asdf:"asdf"})
+})
+
 router.post('/ussd/:id', async (req, res) => {    
     const project_id = req.params.id
 
