@@ -59,7 +59,7 @@ server.use('/workflows', WorkflowsRouter);
 
 
 server.get('/', (req, res) => {
-  res.send(`We're live! Please Login.`);
+  res.json({database_url: process.env.DATABASE_URL})
 });
 
 server.get('/home', (req, res) => {
