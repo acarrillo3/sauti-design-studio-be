@@ -52,11 +52,10 @@ module.exports = {
     },
     seeds: {
       directory: './database/seeds',
-    },
-    useNullAsDefault: true,
+    }
   },
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
@@ -68,7 +67,6 @@ module.exports = {
     },
     seeds: {
       directory: './database/seeds',
-    },
-    useNullAsDefault: true,
+    }
   },
 };
