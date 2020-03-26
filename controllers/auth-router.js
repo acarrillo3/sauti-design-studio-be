@@ -18,11 +18,10 @@ router.get(
 	'/google/redirect',
 	passport.authenticate('google', { failureRedirect: `${process.env.FRONTEND_URL}` }),
 	(req, res) => {
-		console.log('req', req.user);
+		console.log('THIS IS THE RES.req:', res.req.authInfo)
 		res
 			.status(200)
-			// .cookie('token', res.req.authInfo)
-			.cookie('token', req.authInfo)
+			.cookie('token', res.req.authInfo)
 			.cookie('user_id', req.user.id)
 			.redirect(`${process.env.FRONTEND_URL}/profile/${req.user.id}`);
 	}
