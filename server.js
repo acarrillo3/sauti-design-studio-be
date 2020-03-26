@@ -73,8 +73,8 @@ server.get('/logout', (req, res) => {
 });
 
 // ENDPOINT FOR HOMEPAGE
-server.get('/', function(req, res) {
-  res.sendFile(path.join(`${__dirname}/index2.html`));
-});
+// server.get('/', function(req, res) {
+//   res.sendFile(path.join(`${__dirname}/index2.html`));
+// });
 
 module.exports = server;
