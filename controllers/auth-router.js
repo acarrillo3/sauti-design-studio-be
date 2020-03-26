@@ -21,7 +21,8 @@ router.get(
 		console.log('req', req.user);
 		res
 			.status(200)
-			.cookie('token', res.req.authInfo)
+			// .cookie('token', res.req.authInfo)
+			.cookie('token', req.authInfo)
 			.cookie('user_id', req.user.id)
 			.redirect(`${process.env.FRONTEND_URL}/profile/${req.user.id}`);
 	}
