@@ -4,6 +4,8 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const Users = require('../models/user-models');
 
+require('dotenv').config();
+
 // Login with google
 router.get(
 	'/google',
@@ -18,7 +20,7 @@ router.get(
 	'/google/redirect',
 	passport.authenticate('google', { failureRedirect: `${process.env.FRONTEND_URL}` }),
 	(req, res) => {
-		console.log('THIS IS THE RES.req:', res.req.authInfo)
+		console.log('THIS IS THE req.user.id', req.user.id)
 		res
 			.status(200)
 			.cookie('token', res.req.authInfo)
