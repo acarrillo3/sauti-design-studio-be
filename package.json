@@ -57,8 +57,8 @@
     "migrate": "npx knex migrate:latest",
     "rollback": "npx knex migrate:rollback",
     "seed": "npx knex seed:run",
-    "reset": "npx knex migrate:latest && npx knex seed:run",
-    "test": "cross-env DB_ENV=testing jest --watch --verbose --detectOpenHandles --forceExit",
+    "reset": "npx knex migrate:latest && npx knex seed:run",    
+    "test": "jest --watch --verbose",    
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "coverage": "jest --coverage --detectOpenHandles --forceExit || true"
